@@ -28,5 +28,10 @@ public class Main {
         // Item 3.3 - Imprimindo todos os funcionários e suas respectivas informações no formato exigido:
         System.out.println("Lista de Funcionários:");
         funcionarios.forEach(System.out::println);
+
+
+        // Item 3.4 - Atualizando salário dos funcionários com 10% de aumento:
+        funcionarios.forEach(f -> f.setSalario(f.getSalario().multiply( new BigDecimal("1.10"))));
+
     }
 }
