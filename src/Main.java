@@ -1,7 +1,10 @@
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args){
@@ -32,6 +35,11 @@ public class Main {
 
         // Item 3.4 - Atualizando salário dos funcionários com 10% de aumento:
         funcionarios.forEach(f -> f.setSalario(f.getSalario().multiply( new BigDecimal("1.10"))));
+
+
+        // Item 3.5 - Agrupando os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”:
+        Map<String, List<Funcionario>> funcionariosPorFuncao = funcionarios.stream()
+                .collect(Collectors.groupingBy(Funcionario::getFuncao));
 
     }
 }
