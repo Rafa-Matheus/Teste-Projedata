@@ -48,6 +48,12 @@ public class Main {
             System.out.println(funcao + ":");
             lista.forEach(System.out::println);
         });
-        
+
+
+        // Item 3.8 - Imprimindo funcionários nascidos nos meses 10 e 12:
+        System.out.println("\nFuncionários Nascidos em Outubro e Dezembro:");
+        funcionarios.stream()
+                .filter(f -> f.getDataNascimento().getMonthValue() == 10 || f.getDataNascimento().getMonthValue() == 12)
+                .forEach(System.out::println);
     }
 }
