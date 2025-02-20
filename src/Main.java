@@ -81,7 +81,15 @@ public class Main {
 
         System.out.println("\nSoma Total do Salário de Todos os Funcionários: " + formatarValor(somaTotalSalarios));
 
-        
+
+        // Item 3.12 - Imprimindo a quantidade de salários mínimos que cada funcionário recebe:
+        BigDecimal salarioMinimo = new BigDecimal("1212.00");
+
+        System.out.println("\nQuantidade de Salários Mínimos por Funcionário:");
+        funcionarios.forEach(f -> {
+            BigDecimal quantidadeSalariosMinimos = f.getSalario().divide(salarioMinimo, 2, RoundingMode.DOWN);
+            System.out.println(" - " + f.getNome() + ": " + quantidadeSalariosMinimos);
+        });
     }
 
     private static String formatarValor(BigDecimal valor) {
