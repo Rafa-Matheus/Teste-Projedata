@@ -1,5 +1,8 @@
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class Funcionario extends Pessoa{
     private BigDecimal salario;
@@ -13,4 +16,11 @@ public class Funcionario extends Pessoa{
 
     public BigDecimal getSalario() { return salario; }
     public String getFuncao() { return funcao; }
+
+    @Override
+    public String toString(){
+        return super.toString() +
+                " | Salário: " + new DecimalFormat("#,##0.00", new DecimalFormatSymbols() {{setGroupingSeparator('.'); setDecimalSeparator(',');}}).format(salario) +
+                " | Função: " + funcao;
+    }
 }
