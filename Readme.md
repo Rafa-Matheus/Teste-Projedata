@@ -1,4 +1,4 @@
-# **Sistema de Gestão de Funcionários - Teste Prático Projedata**
+# **Teste Prático - Projedata**
 
 ## **Descrição**
 Este projeto é a solução para o **Teste Prático de Programação** proposto pela **Projedata** como parte do processo seletivo para a vaga de **Desenvolvedor Java**. O sistema gerencia informações de funcionários, como nome, data de nascimento, salário e função, e implementa todas as funcionalidades solicitadas no teste.
