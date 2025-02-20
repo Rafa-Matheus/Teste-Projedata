@@ -23,7 +23,6 @@ public class Main {
         funcionarios.add(new Funcionario("Heloísa", LocalDate.of(2003, 5, 24), new BigDecimal("1606.85"), "Eletricista"));
         funcionarios.add(new Funcionario("Helena", LocalDate.of(1996, 9, 2), new BigDecimal("2799.93"), "Gerente"));
 
-
         // Item 3.2 - Removendo João da lista de funcionários:
         funcionarios.removeIf(f -> f.getNome().equals("João"));
 
@@ -55,5 +54,16 @@ public class Main {
         funcionarios.stream()
                 .filter(f -> f.getDataNascimento().getMonthValue() == 10 || f.getDataNascimento().getMonthValue() == 12)
                 .forEach(System.out::println);
+
+
+        // Item 3.9 - Imprimindo o funcionário mais velho:
+        Funcionario funcionarioMaisVelho = funcionarios.stream()
+                .min(Comparator.comparing(Pessoa::getDataNascimento))
+                .get();
+
+        System.out.println("\nFuncionário Mais Velho:\n - Nome: " + funcionarioMaisVelho.getNome() +
+                "\n - Idade: " + funcionarioMaisVelho.getIdade() + " anos");
+
+        
     }
 }
