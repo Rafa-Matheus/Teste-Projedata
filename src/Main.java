@@ -64,6 +64,11 @@ public class Main {
         System.out.println("\nFuncionário Mais Velho:\n - Nome: " + funcionarioMaisVelho.getNome() +
                 "\n - Idade: " + funcionarioMaisVelho.getIdade() + " anos");
 
-        
+
+        // Item 3.10 - Imprimindo a lista de funcionários por ordem alfabética:
+        System.out.println("\nLista de Funcionários em Ordem Alfabética:");
+        funcionarios.stream()
+                .sorted(Comparator.comparing(Pessoa::getNome))
+                .forEach(System.out::println);
     }
 }
