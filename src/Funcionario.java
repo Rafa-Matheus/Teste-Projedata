@@ -21,7 +21,7 @@ public class Funcionario extends Pessoa{
     @Override
     public String toString(){
         return super.toString() +
-                " | Salário: " + formatarSalario(salario) +//new DecimalFormat("#,##0.00", new DecimalFormatSymbols() {{setGroupingSeparator('.'); setDecimalSeparator(',');}}).format(salario) +
+                " | Salário: R$ " + formatarSalario(salario) +//new DecimalFormat("#,##0.00", new DecimalFormatSymbols() {{setGroupingSeparator('.'); setDecimalSeparator(',');}}).format(salario) +
                 " | Função: " + funcao;
     }
 

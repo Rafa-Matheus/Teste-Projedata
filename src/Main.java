@@ -79,7 +79,7 @@ public class Main {
         BigDecimal somaTotalSalarios = funcionarios.stream()
                 .map(Funcionario::getSalario).reduce(BigDecimal.ZERO, BigDecimal::add);
 
-        System.out.println("\nSoma Total do Salário de Todos os Funcionários: " + formatarValor(somaTotalSalarios));
+        System.out.println("\nSoma Total do Salário de Todos os Funcionários: R$ " + formatarValor(somaTotalSalarios));
 
 
         // Item 3.12 - Imprimindo a quantidade de salários mínimos que cada funcionário recebe:
