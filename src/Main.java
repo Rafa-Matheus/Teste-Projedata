@@ -1,4 +1,7 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -70,5 +73,21 @@ public class Main {
         funcionarios.stream()
                 .sorted(Comparator.comparing(Pessoa::getNome))
                 .forEach(System.out::println);
+
+
+        // Item 3.11 - Imprimindo a soma total do salário dos funcionários:
+        BigDecimal somaTotalSalarios = funcionarios.stream()
+                .map(Funcionario::getSalario).reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        System.out.println("\nSoma Total do Salário de Todos os Funcionários: " + formatarValor(somaTotalSalarios));
+
+        
+    }
+
+    private static String formatarValor(BigDecimal valor) {
+        return new DecimalFormat("#,##0.00", new DecimalFormatSymbols() {{
+            setGroupingSeparator('.');
+            setDecimalSeparator(',');
+        }}).format(valor);
     }
 }
